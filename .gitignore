@@ -1,0 +1,25 @@
+# --- PyCharm/IntelliJ Specific ---
+.idea/
+*.iml
+out/
+gen/
+
+# --- Python Specific ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# --- Local Environment / Secrets ---
+.env
+.venv
+.pytest_cache/
+.coverage
+htmlcov/
