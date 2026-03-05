@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 from handle_data import save_to_csv
 
 urls = {
-    'Hacker News' : 'https://brutalist.report/source/hn?hours=6', # Hacker News
-    'The Verge' : 'https://brutalist.report/source/verge?hours=6', # The Verge
-    'Engadget' : 'https://brutalist.report/source/engadget?hours=6', # Engadget
-    'TechCrunch' : 'https://brutalist.report/source/techcrunch?hours=6', # TechCrunch
-    'TechRadar' : 'https://brutalist.report/source/techradar?hours=6' # TechRadar
+    'Hacker News' : 'https://brutalist.report/source/hn?hours=3', # Hacker News
+    'The Verge' : 'https://brutalist.report/source/verge?hours=3', # The Verge
+    'Engadget' : 'https://brutalist.report/source/engadget?hours=3', # Engadget
+    'TechCrunch' : 'https://brutalist.report/source/techcrunch?hours=3', # TechCrunch
+    'TechRadar' : 'https://brutalist.report/source/techradar?hours=3' # TechRadar
 }
 
 def fetch_headlines():
