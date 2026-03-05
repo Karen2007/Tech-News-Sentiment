@@ -47,7 +47,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Automated Pulse Update: $(date)"
+            git commit -m "Automated Update: $(date)"
             git pull --rebase
             git push
           fi
