@@ -32,6 +32,7 @@ After performing the analysis, uploads the newly obtained data into another CSV 
 ## Setup and Installation
 To run this project locally, ensure you have Python 3.10+ installed:
 
+
 ```bash
 # Clone the repository
 git clone [https://github.com/Karen2007/Tech-News-Sentiment.git](https://github.com/Karen2007/Tech-News-Sentiment.git)
