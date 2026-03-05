@@ -43,18 +43,7 @@ if total_headlines > 0:
 
 
 def create_sentiment_report():
-    """
-    Dataset should have the columns:
-        - date
-        - weekday
-        - hour_start
-        - hour_end
-        - headline_count
-        - positive_count
-        - neutral_count
-        - negative_count
-        - sentiment_index
-    """
+
     current_hour = datetime.now().hour
     hour_start = current_hour - (current_hour % 3)
     hour_end = (hour_start + 3) % 24
