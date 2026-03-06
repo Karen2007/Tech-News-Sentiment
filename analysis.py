@@ -36,6 +36,7 @@ for sentence, result in zip(sentences, results):
 
 
 total_headlines = len(results)
+
 if total_headlines > 0:
     average_sentiment_score = sentiment_index_score / total_headlines
     print(f"Total Headlines: {total_headlines}")
