@@ -57,7 +57,7 @@ def create_sentiment_report():
         'positive_count' :        [positive_count],
         'negative_count' :        [negative_count],
         'neutral_count' :         [neutral_count],
-        'sentiment_index_score' : [average_sentiment_score]
+        'sentiment_index_score' : [round(average_sentiment_score, 4)]
     })
 
     file_path = 'sentiment_index_history.csv'
