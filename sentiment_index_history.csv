@@ -26,3 +26,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-03-08,Sunday,12,15,429,43,67,319,-0.0443
 2026-03-08,Sunday,15,18,447,45,68,334,-0.0406
 2026-03-08,Sunday,18,21,464,46,71,347,-0.0441
+2026-03-08,Sunday,21,0,481,46,75,360,-0.0489
