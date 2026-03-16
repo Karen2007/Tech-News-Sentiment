@@ -1,2 +1,3 @@
 date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,neutral_count,sentiment_index_score
 2026-03-16,Monday,18,21,36,5,7,24,-0.0581
+2026-03-16,Monday,21,0,18,2,4,12,-0.0651
