@@ -3,7 +3,7 @@ import os
 
 from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import pipeline
-from datetime import datetime
+from datetime import datetime, UTC
 
 model_name = 'ProsusAI/finbert'
 tokenizer = BertTokenizer.from_pretrained(model_name)
@@ -13,10 +13,11 @@ model = BertForSequenceClassification.from_pretrained(model_name) # Load the tok
 nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer) # Create the pipeline
 
 data = pd.read_csv('tech_sentiment_data.csv')
-sentences = list(data['headline'])
+sentences = list(data['headline']) # Get all the headlines
 
 results = nlp(sentences)
 
+# Scores
 sentiment_index_score = 0
 negative_count = 0
 positive_count = 0
@@ -45,7 +46,7 @@ if total_headlines > 0:
 
 def create_sentiment_report():
 
-    current_hour = datetime.now().hour
+    current_hour = datetime.now(UTC).hour # Current universal time
     hour_start = current_hour - (current_hour % 3)
     hour_end = (hour_start + 3) % 24
 

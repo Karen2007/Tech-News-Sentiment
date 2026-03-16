@@ -53,6 +53,5 @@ def fetch_headlines():
 
 if __name__ == "__main__":
     data = fetch_headlines()
-    # if data:
     save_to_csv(data)
     print(f"Saved {len(data)} headlines.")
