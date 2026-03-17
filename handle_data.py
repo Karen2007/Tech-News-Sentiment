@@ -15,4 +15,4 @@ def save_to_csv(data_frame):
         f.write('headline,source,link,datetime')
         data_frame.to_csv(file_path, mode='a', index=False)
 
-    return data_frame
+    return None

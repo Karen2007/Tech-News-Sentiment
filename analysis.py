@@ -23,6 +23,7 @@ negative_count = 0
 positive_count = 0
 neutral_count = 0
 
+# Calculate counts and index score
 for sentence, result in zip(sentences, results):
     print(f'Sentence: {sentence}')
     print(f'Sentiment: {result["label"]}, Score: {round(result["score"], 4)}\n')
@@ -38,6 +39,7 @@ for sentence, result in zip(sentences, results):
 
 total_headlines = len(results)
 
+# Print out the results
 if total_headlines > 0:
     average_sentiment_score = sentiment_index_score / total_headlines
     print(f"Total Headlines: {total_headlines}")
