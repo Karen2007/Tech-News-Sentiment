@@ -22,7 +22,7 @@ def display_last_day_scores(ax):
                       for start_time, end_time in zip(last_day_times_start, last_day_times_end)]
 
     ax.plot(plot_time_axis, last_day_scores, marker='o', linestyle='-', color='red')
-    ax.hlines(xmin=plot_time_axis[0], xmax=plot_time_axis[-1], y=0) # Add the y=0 line to the graph
+    ax.hlines(xmin=plot_time_axis[0], xmax=plot_time_axis[-1], y=0, alpha=0.7, linestyle='--') # Add the y=0 line to the graph
     ax.set_ylim(min(last_day_scores) - 0.01, max(last_day_scores) + 0.01) # Lock the y limits
     ax.set_title(f"Sentiment Index Score {last_day}")
     ax.set_xticks(plot_time_axis) # Set xticks to time periods
@@ -45,7 +45,7 @@ def display_last_week_scores(ax):
 
     # Plot
     ax.plot(scores.index, scores.values, marker='o', linestyle='-', color='blue')
-    ax.hlines(xmin=scores.index[0], xmax=scores.index[-1], y=0) # Add the y=0 line to the graph
+    ax.hlines(xmin=scores.index[0], xmax=scores.index[-1], y=0, linestyle='--', alpha=0.7) # Add the y=0 line to the graph
     ax.set_ylim(scores.values.min() - 0.001, scores.values.max() + 0.001) # Lock the y limits
     ax.set_title(f'Average Sentiment Index Score {first_day.strftime("%Y/%m/%d")} - {last_day.strftime("%Y/%m/%d")}')
     ax.set_xticks(scores.index) # Set xticks to days
@@ -58,6 +58,7 @@ plt.rcParams['font.family'] = 'Century Gothic' # Change font
 plt.style.use('dark_background') # BG color
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
+fig.suptitle('Recent Results', fontsize=20)
 
 display_last_day_scores(ax1) # First plot on the top
 display_last_week_scores(ax2) # Second one on the bottom
