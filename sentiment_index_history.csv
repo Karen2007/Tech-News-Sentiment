@@ -1,9 +1,0 @@
-date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,neutral_count,sentiment_index_score
-2026-03-16,Monday,18,21,36,5,7,24,-0.0581
-2026-03-16,Monday,21,0,18,2,4,12,-0.0651
-2026-03-17,Tuesday,0,3,12,0,2,10,-0.1376
-2026-03-17,Tuesday,3,6,9,0,1,8,-0.1008
-2026-03-17,Tuesday,6,9,3,0,0,3,0.0
-2026-03-17,Tuesday,9,12,4,0,0,4,0.0
-2026-03-17,Tuesday,12,15,30,4,1,25,0.0769
-2026-03-17,Tuesday,15,18,65,4,6,55,-0.0152
