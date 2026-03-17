@@ -64,4 +64,4 @@ display_last_day_scores(ax1) # First plot on the top
 display_last_week_scores(ax2) # Second one on the bottom
 
 plt.tight_layout(pad=2.0) # Prevent overlap
-plt.savefig('recent_results.png', facecolor=fig.get_facecolor(), dpi=300)
+plt.savefig('recent_results.png', facecolor=fig.get_facecolor(), dpi=300) # Save to file
