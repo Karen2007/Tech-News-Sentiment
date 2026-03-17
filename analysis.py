@@ -49,7 +49,7 @@ if total_headlines > 0:
 def create_sentiment_report():
 
     current_hour = datetime.now(UTC).hour # Current universal time
-    hour_start = current_hour - (current_hour % 3)
+    hour_start = (current_hour - (current_hour % 3) - 3) % 24
     hour_end = (hour_start + 3) % 24
 
     df = pd.DataFrame({
