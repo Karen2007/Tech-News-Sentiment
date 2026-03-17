@@ -8,13 +8,19 @@ tools to perform natural language processing.
 
 ---
 
+## Recent results
+
+Here are the most recent results (today and last 7 days).
+
+![Recent results](recent_results.png)
+
 ## Project Overview
 The system fetches real-time headlines from various news sources in the tech industry and calculates a sentiment index score 
 by processing headlines through a multi-stage automated pipeline.
 
 * **Data Sourcing**: Scrapes the latest headlines from [The Brutalist Report](https://brutalist.report).
 * **Sentiment Engine**: Utilizes **FinBERT** (`ProsusAI/finbert`), a BERT model specifically pre-trained for high-accuracy sentiment classification 
-* (positive/negative/neutral news).
+(positive/negative/neutral news).
 * **Automation**: Runs every 3 hours via **GitHub Actions** to ensure the dataset remains 'relevant'.
 
 ## Technical Architecture
