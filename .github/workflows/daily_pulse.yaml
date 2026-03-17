@@ -39,6 +39,9 @@ jobs:
       - name: Run Analysis
         run: python analysis.py
 
+      - name: Run plotting
+        run: python plotting.py
+
       - name: Save Results
         run: |
           git config --global user.name "github-actions[bot]"
