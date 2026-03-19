@@ -31,7 +31,8 @@ The project is split into three distinct phases:
 2.  **Data Handling (`handle_data.py`)**: Handles the fetched data, and transforms it into a CSV file, for the next step in the pipeline.
 3. **Analysis (`analysis.py`)**: Processes text through the with the help of the `transformers` library to generate sentiment scores (Positive, Negative, Neutral).
 After performing the analysis, uploads the newly obtained data into another CSV file called [`sentiment_index_history.csv`]
-4. **Automation**: Repeats the process indefinitely and commits updated datasets to the repository:
+4. **Plotting**(`plotting.py`): Plots the most recent results to a file called `recent_results.png`. These results are also shown above in the README.
+5. **Automation**: Repeats the process indefinitely and commits updated datasets to the repository:
     * `tech_sentiment_data.csv`: Latest raw sentiment results.
     * `sentiment_index_history.csv`: Historical aggregate data for trend analysis.
 
