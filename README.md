@@ -21,7 +21,7 @@ by processing headlines through a multi-stage automated pipeline.
 * **Data Sourcing**: Scrapes the latest headlines from [The Brutalist Report](https://brutalist.report).
 * **Sentiment Engine**: Utilizes **FinBERT** (`ProsusAI/finbert`), a BERT model specifically pre-trained for high-accuracy sentiment classification 
 (positive/negative/neutral news).
-* **Automation**: Runs every 3 hours via **GitHub Actions** to ensure the dataset remains 'relevant'.
+* **Automation**: Runs every hour via **GitHub Actions** to ensure the dataset remains 'relevant'.
 
 ## Technical Architecture
 The project is split into three distinct phases:

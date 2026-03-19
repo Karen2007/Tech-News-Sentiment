@@ -6,11 +6,11 @@ from datetime import datetime
 
 
 urls = {
-    'Hacker News' : 'https://brutalist.report/source/hn?hours=3', # Hacker News
-    'The Verge' : 'https://brutalist.report/source/verge?hours=3', # The Verge
-    'Engadget' : 'https://brutalist.report/source/engadget?hours=3', # Engadget
-    'TechCrunch' : 'https://brutalist.report/source/techcrunch?hours=3', # TechCrunch
-    'TechRadar' : 'https://brutalist.report/source/techradar?hours=3' # TechRadar
+    'Hacker News' : 'https://brutalist.report/source/hn?hours=1', # Hacker News
+    'The Verge' : 'https://brutalist.report/source/verge?hours=1', # The Verge
+    'Engadget' : 'https://brutalist.report/source/engadget?hours=1', # Engadget
+    'TechCrunch' : 'https://brutalist.report/source/techcrunch?hours=1', # TechCrunch
+    'TechRadar' : 'https://brutalist.report/source/techradar?hours=1' # TechRadar
 }
 
 def fetch_headlines():
