@@ -1,12 +1,18 @@
 import pandas as pd
+import requests
+import io
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
-
+import matplotlib.font_manager as fm
 from datetime import timedelta, timezone, datetime
 
-data = pd.read_csv('sentiment_index_history.csv')
+# Download the font for GitHub
+url = "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Regular.ttf"
+response = requests.get(url)
+fm.fontManager.addfont(io.BytesIO(response.content))
+plt.rcParams['font.family'] = 'Poppins'
 
-pd.set_option('display.max_columns', 10)
+data = pd.read_csv('sentiment_index_history.csv')
 
 def display_last_day_scores(ax):
 
@@ -53,6 +59,7 @@ def display_last_week_scores(ax):
     ax.set_ylabel('Average sentiment score')
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.4f')) # Only 4 digits after decimal on y-axis
     ax.grid(color='gray', alpha=0.5, linestyle='--')
+
 
 plt.rcParams['font.family'] = 'Century Gothic' # Change font
 plt.style.use('dark_background') # BG color
