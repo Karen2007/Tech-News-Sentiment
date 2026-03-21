@@ -23,32 +23,40 @@ data = pd.read_csv('sentiment_index_history.csv')
 
 def display_last_day_scores(ax):
 
-    last_day = data['date'].iloc[-1] # Get last day from last entry
-    last_day_times = data[data['date'] == last_day][['hour_start', 'hour_end']]
-    last_day_scores = data[data['date'] == last_day]['sentiment_index_score']
+    recent_day = data['date'].iloc[-1]  # Get last day from last entry
 
-    last_day_times_start = last_day_times['hour_start'].tolist() # Starts of intervals
-    last_day_times_end = last_day_times['hour_end'].tolist() # Ends of intervals
+    # If at least 24 rows are present, plot the last 24
+    if len(data) >= 24:
+        recent_hours = data.iloc[-24:]
+        recent_starts = recent_hours['hour_start'].tolist()
+        recent_ends = recent_hours['hour_end'].tolist()
+        recent_day_scores = recent_hours['sentiment_index_score']
+    
+    else:
+        recent_day_times = data[data['date'] == recent_day][['hour_start', 'hour_end']]
+        recent_day_scores = data[data['date'] == recent_day]['sentiment_index_score']
+    
+        recent_starts = recent_day_times['hour_start'].tolist() # Starts of intervals
+        recent_ends = recent_day_times['hour_end'].tolist() # Ends of intervals
 
     # Display the time nicely in the x-axis of the graph
     plot_time_axis = [f"{start_time}:00-{end_time}:00"
-                      for start_time, end_time in zip(last_day_times_start, last_day_times_end)]
+                      for start_time, end_time in zip(recent_starts, recent_ends)]
 
-    ax.plot(plot_time_axis, last_day_scores, marker='o', linestyle='-', color='red')
+    ax.plot(plot_time_axis, recent_day_scores, marker='o', linestyle='-', color='red')
     ax.hlines(xmin=plot_time_axis[0], xmax=plot_time_axis[-1], y=0, alpha=0.7, linestyle='--') # Add the y=0 line to the graph
-    ax.set_ylim(min(last_day_scores) - 0.01, max(last_day_scores) + 0.01) # Lock the y limits
-    ax.set_title(f"Sentiment Index Score {last_day}")
+    ax.set_ylim(min(recent_day_scores) - 0.01, max(recent_day_scores) + 0.01) # Lock the y limits
+    ax.set_title(f"Sentiment Index Score {datetime.n}")
     ax.set_xticks(plot_time_axis) # Set xticks to time periods
     ax.set_xlabel('Hours')
     ax.set_ylabel('Sentiment score')
-    ax.grid(linestyle='--')  # Add grid
-    ax.grid(color='gray', alpha=0.5, linestyle='--')
+    ax.grid(color='gray', alpha=0.5, linestyle='--') # Add grid
 
 
 def display_last_week_scores(ax):
 
     last_day = pd.to_datetime(data['date'].iloc[-1]) # Get last day from last entry
-    first_day = last_day - timedelta(days=7) + timedelta(days=1) # Date one week ago
+    first_day = last_day - timedelta(days=6) # Date one week ago
 
     data['date'] = pd.to_datetime(data['date']) # Convert string to datetime object
 
@@ -71,9 +79,11 @@ plt.style.use('dark_background') # BG color
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
 fig.suptitle('Recent Results', fontsize=20)
+fig.autofmt_xdate() # Fix overlap if too many values are present on the x-axis
 
 display_last_day_scores(ax1) # First plot on the top
 display_last_week_scores(ax2) # Second one on the bottom
 
 plt.tight_layout(pad=2.0) # Prevent overlap
 plt.savefig('recent_results.png', facecolor=fig.get_facecolor(), dpi=300) # Save to file
+plt.show()
