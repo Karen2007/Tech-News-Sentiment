@@ -46,7 +46,7 @@ def display_last_day_scores(ax):
     ax.plot(plot_time_axis, recent_day_scores, marker='o', linestyle='-', color='red')
     ax.hlines(xmin=plot_time_axis[0], xmax=plot_time_axis[-1], y=0, alpha=0.7, linestyle='--') # Add the y=0 line to the graph
     ax.set_ylim(min(recent_day_scores) - 0.01, max(recent_day_scores) + 0.01) # Lock the y limits
-    ax.set_title(f"Sentiment Index Score {datetime.n}")
+    ax.set_title(f"Sentiment Index Score In The Last 24 Hours")
     ax.set_xticks(plot_time_axis) # Set xticks to time periods
     ax.set_xlabel('Hours')
     ax.set_ylabel('Sentiment score')
