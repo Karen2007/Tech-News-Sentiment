@@ -67,8 +67,6 @@ def display_last_week_scores(ax):
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.4f')) # Only 4 digits after decimal on y-axis
     ax.grid(color='gray', alpha=0.5, linestyle='--')
 
-
-plt.rcParams['font.family'] = 'Century Gothic' # Change font
 plt.style.use('dark_background') # BG color
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
