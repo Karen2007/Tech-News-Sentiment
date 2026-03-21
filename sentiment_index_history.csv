@@ -1,3 +1,4 @@
 date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,neutral_count,sentiment_index_score
 2026-03-21,Saturday,13,14,140,16,27,97,-0.0782
 2026-03-21,Saturday,14,15,125,14,25,86,-0.0854
+2026-03-21,Saturday,15,16,125,14,21,90,-0.0566
