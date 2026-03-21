@@ -44,12 +44,14 @@ def display_last_day_scores(ax):
                       for start_time, end_time in zip(recent_starts, recent_ends)]
 
     ax.plot(plot_time_axis, recent_day_scores, marker='o', linestyle='-', color='red')
+    ax.autofmt_xdate()  # Fix overlap if too many values are present on the x-axis
     ax.hlines(xmin=plot_time_axis[0], xmax=plot_time_axis[-1], y=0, alpha=0.7, linestyle='--') # Add the y=0 line to the graph
     ax.set_ylim(min(recent_day_scores) - 0.01, max(recent_day_scores) + 0.01) # Lock the y limits
     ax.set_title(f"Sentiment Index Score In The Last 24 Hours")
     ax.set_xticks(plot_time_axis) # Set xticks to time periods
     ax.set_xlabel('Hours')
     ax.set_ylabel('Sentiment score')
+    ax.tick_params(axis='x', rotation=45) # Rotate ticks to prevent overlap
     ax.grid(color='gray', alpha=0.5, linestyle='--') # Add grid
 
 
@@ -69,7 +71,6 @@ def display_last_week_scores(ax):
     ax.hlines(xmin=scores.index[0], xmax=scores.index[-1], y=0, linestyle='--', alpha=0.7) # Add the y=0 line to the graph
     ax.set_ylim(scores.values.min() - 0.001, scores.values.max() + 0.001) # Lock the y limits
     ax.set_title(f'Average Sentiment Index Score {first_day.strftime("%Y/%m/%d")} - {last_day.strftime("%Y/%m/%d")}')
-    ax.set_xticks(scores.index) # Set xticks to days
     ax.set_xlabel('Date')
     ax.set_ylabel('Average sentiment score')
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.4f')) # Only 4 digits after decimal on y-axis
@@ -79,7 +80,6 @@ plt.style.use('dark_background') # BG color
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6))
 fig.suptitle('Recent Results', fontsize=20)
-fig.autofmt_xdate() # Fix overlap if too many values are present on the x-axis
 
 display_last_day_scores(ax1) # First plot on the top
 display_last_week_scores(ax2) # Second one on the bottom
