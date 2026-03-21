@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-
 from transformers import BertTokenizer, BertForSequenceClassification
 from transformers import pipeline
 from datetime import datetime, UTC
@@ -12,35 +11,38 @@ model = BertForSequenceClassification.from_pretrained(model_name) # Load the tok
 
 nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer) # Create the pipeline
 
-data = pd.read_csv('tech_sentiment_data.csv')
-sentences = list(data['headline']) # Get all the headlines
+# Check if any new headlines appeared
+try:
+    data = pd.read_csv('tech_sentiment_data.csv')
+except:
+    data = pd.DataFrame(columns=['headline', 'source', 'link', 'datetime']) # If no new headlines create an empty DF.
 
-results = nlp(sentences)
+if len(data) > 0:
+    sentences = list(data['headline']) # Get all the headlines
+    results = nlp(sentences) # Perform analysis
 
-# Scores
-sentiment_index_score = 0
-negative_count = 0
-positive_count = 0
-neutral_count = 0
+    # Scores
+    sentiment_index_score = 0
+    negative_count = 0
+    positive_count = 0
+    neutral_count = 0
 
-# Calculate counts and index score
-for sentence, result in zip(sentences, results):
-    print(f'Sentence: {sentence}')
-    print(f'Sentiment: {result["label"]}, Score: {round(result["score"], 4)}\n')
-    if result['label'] == 'negative':
-        sentiment_index_score -= round(result['score'], 4)
-        negative_count += 1
-    elif result['label'] == 'positive':
-        sentiment_index_score += round(result['score'], 4)
-        positive_count += 1
-    else:
-        neutral_count += 1
+    # Calculate counts and index score
+    for sentence, result in zip(sentences, results):
+        print(f'Sentence: {sentence}')
+        print(f'Sentiment: {result["label"]}, Score: {round(result["score"], 4)}\n')
+        if result['label'] == 'negative':
+            sentiment_index_score -= round(result['score'], 4)
+            negative_count += 1
+        elif result['label'] == 'positive':
+            sentiment_index_score += round(result['score'], 4)
+            positive_count += 1
+        else:
+            neutral_count += 1
 
+    total_headlines = len(results)
 
-total_headlines = len(results)
-
-# Print out the results
-if total_headlines > 0:
+    # Print out the results
     average_sentiment_score = sentiment_index_score / total_headlines
     print(f"Total Headlines: {total_headlines}")
     print(f"Global Sentiment Index: {round(average_sentiment_score, 4)}")
@@ -48,27 +50,50 @@ if total_headlines > 0:
 
 def create_sentiment_report():
 
-    current_hour = datetime.now(UTC).hour # Current universal time
+    current_hour = datetime.now(UTC).hour  # Current universal time
     hour_start = (current_hour - 1) % 24
     hour_end = (hour_start + 1) % 24
 
-    df = pd.DataFrame({
-        'date' :                  [datetime.now().date()],
-        'weekday' :               [datetime.now().strftime('%A')],
-        'hour_start' :            [hour_start],
-        'hour_end' :              [hour_end],
-        'headline_count' :        [total_headlines],
-        'positive_count' :        [positive_count],
-        'negative_count' :        [negative_count],
-        'neutral_count' :         [neutral_count],
-        'sentiment_index_score' : [round(average_sentiment_score, 4)]
-    })
-
+    # Path of the CSV file
     file_path = 'sentiment_index_history.csv'
     file_exists = os.path.isfile(file_path)
+
+    # If any new headlines appeared
+    if len(data) > 0:
+
+        df = pd.DataFrame({
+            'date' :                  [datetime.now().date()],
+            'weekday' :               [datetime.now().strftime('%A')],
+            'hour_start' :            [hour_start],
+            'hour_end' :              [hour_end],
+            'headline_count' :        [total_headlines],
+            'positive_count' :        [positive_count],
+            'negative_count' :        [negative_count],
+            'neutral_count' :         [neutral_count],
+            'sentiment_index_score' : [round(average_sentiment_score, 4)]
+        })
+
+
+    # If no headlines appeared, upload 0s
+    else:
+
+        df = pd.DataFrame({
+            'date' :                  [datetime.now().date()],
+            'weekday' :               [datetime.now().strftime('%A')],
+            'hour_start' :            [hour_start],
+            'hour_end' :              [hour_end],
+            'headline_count' :        [0],
+            'positive_count' :        [0],
+            'negative_count' :        [0],
+            'neutral_count' :         [0],
+            'sentiment_index_score' : [0]
+        })
+
+    # Save results ts csv file
     df.to_csv(file_path, mode='a', index=False, header=not file_exists)
 
     return None
+
 
 if __name__ == '__main__':
     create_sentiment_report()
