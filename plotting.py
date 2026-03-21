@@ -1,15 +1,22 @@
 import pandas as pd
 import requests
 import io
+import tempfile
+import os
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import matplotlib.font_manager as fm
 from datetime import timedelta, timezone, datetime
 
-# Download the font for GitHub
+# Download new font for GitHub
 url = "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Regular.ttf"
 response = requests.get(url)
-fm.fontManager.addfont(io.BytesIO(response.content))
+
+with tempfile.NamedTemporaryFile(delete=False, suffix='.ttf') as f:
+    f.write(response.content)
+    font_path = f.name
+
+fm.fontManager.addfont(font_path)
 plt.rcParams['font.family'] = 'Poppins'
 
 data = pd.read_csv('sentiment_index_history.csv')
