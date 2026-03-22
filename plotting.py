@@ -20,6 +20,7 @@ fm.fontManager.addfont(font_path)
 plt.rcParams['font.family'] = 'Poppins'
 
 data = pd.read_csv('sentiment_index_history.csv')
+data['date'] = pd.to_datetime(data['date']).dt.date
 
 def display_last_day_scores(ax):
 
@@ -57,18 +58,17 @@ def display_last_day_scores(ax):
 def display_last_week_scores(ax):
 
     last_day = pd.to_datetime(data['date'].iloc[-1]) # Get last day from last entry
-    first_day = last_day - timedelta(days=6) # Date one week ago
-
-    data['date'] = pd.to_datetime(data['date']) # Convert string to datetime object
+    first_day = (pd.to_datetime(data['date'].iloc[-1]) - timedelta(days=6)).date() # Date one week ago
 
     last_week_data = data[data['date'] >= first_day] # Only the entries in the past 7 days
-    last_week_data = last_week_data.copy()
-    last_week_data['date'] = last_week_data['date'].dt.date  # Strip the time part
 
     scores = last_week_data.groupby('date')['sentiment_index_score'].mean() # Group by days and get the mean
+    print(scores.index)
 
     # Plot
     ax.plot(scores.index, scores.values, marker='o', linestyle='-', color='blue')
+    ax.set_xticks(scores.index)
+    ax.set_xticklabels([str(d) for d in scores.index])
     ax.hlines(xmin=scores.index[0], xmax=scores.index[-1], y=0, linestyle='--', alpha=0.7) # Add the y=0 line to the graph
     ax.set_ylim(scores.values.min() - 0.001, scores.values.max() + 0.001) # Lock the y limits
     ax.set_title(f'Average Sentiment Index Score {first_day.strftime("%Y/%m/%d")} - {last_day.strftime("%Y/%m/%d")}')
