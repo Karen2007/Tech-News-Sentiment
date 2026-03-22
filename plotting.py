@@ -62,6 +62,8 @@ def display_last_week_scores(ax):
     data['date'] = pd.to_datetime(data['date']) # Convert string to datetime object
 
     last_week_data = data[data['date'] >= first_day] # Only the entries in the past 7 days
+    last_week_data = last_week_data.copy()
+    last_week_data['date'] = last_week_data['date'].dt.date  # Strip the time part
 
     scores = last_week_data.groupby('date')['sentiment_index_score'].mean() # Group by days and get the mean
 
