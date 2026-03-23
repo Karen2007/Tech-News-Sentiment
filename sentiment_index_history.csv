@@ -38,3 +38,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-03-23,Monday,10,11,109,9,11,89,-0.023
 2026-03-23,Monday,11,12,109,10,15,84,-0.0482
 2026-03-23,Monday,12,13,110,12,15,83,-0.0336
+2026-03-23,Monday,13,14,106,11,18,77,-0.0658
