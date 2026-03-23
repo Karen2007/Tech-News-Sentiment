@@ -48,4 +48,4 @@ git clone [https://github.com/Karen2007/Tech-News-Sentiment.git](https://github.
 pip install -r requirements.txt
 
 # Run the pipeline manually
-python scrape.py && python analysis.py
+python scrape.py && python analysis.py && python plotting.py
