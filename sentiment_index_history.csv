@@ -400,3 +400,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-04-07,Tuesday,12,13,7,1,0,6,0.1075
 2026-04-07,Tuesday,13,14,6,0,1,5,-0.1555
 2026-04-07,Tuesday,14,15,7,0,1,6,-0.1346
+2026-04-07,Tuesday,15,16,14,1,2,11,-0.0784
