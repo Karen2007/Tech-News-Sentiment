@@ -529,3 +529,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-04-12,Sunday,21,22,3,0,2,1,-0.4292
 2026-04-12,Sunday,22,23,1,1,0,0,0.5478
 2026-04-13,Monday,23,0,0,0,0,0,0
+2026-04-13,Monday,0,1,0,0,0,0,0
