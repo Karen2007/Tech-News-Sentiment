@@ -608,3 +608,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-04-16,Thursday,6,7,1,0,0,1,0.0
 2026-04-16,Thursday,7,8,1,0,1,0,-0.6567
 2026-04-16,Thursday,8,9,1,0,0,1,0.0
+2026-04-16,Thursday,9,10,5,0,2,3,-0.3603
