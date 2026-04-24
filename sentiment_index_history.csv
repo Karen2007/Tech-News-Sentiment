@@ -803,3 +803,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-04-24,Friday,10,11,6,1,0,5,0.1035
 2026-04-24,Friday,11,12,10,3,1,6,0.1764
 2026-04-24,Friday,12,13,8,1,1,6,-0.0398
+2026-04-24,Friday,13,14,3,0,1,2,-0.16
