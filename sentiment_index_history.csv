@@ -874,3 +874,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-04-27,Monday,9,10,2,0,0,2,0.0
 2026-04-27,Monday,10,11,7,1,1,5,-0.0155
 2026-04-27,Monday,11,12,6,1,1,4,-0.0232
+2026-04-27,Monday,12,13,5,0,2,3,-0.3546
