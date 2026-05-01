@@ -973,3 +973,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-05-01,Friday,12,13,8,0,1,7,-0.1024
 2026-05-01,Friday,13,14,9,0,5,4,-0.433
 2026-05-01,Friday,14,15,7,0,3,4,-0.3954
+2026-05-01,Friday,15,16,7,1,0,6,0.1212
