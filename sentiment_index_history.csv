@@ -1010,3 +1010,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-05-03,Sunday,1,2,1,0,0,1,0.0
 2026-05-03,Sunday,2,3,0,0,0,0,0
 2026-05-03,Sunday,3,4,0,0,0,0,0
+2026-05-03,Sunday,4,5,2,1,0,1,0.2755
