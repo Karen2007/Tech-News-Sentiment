@@ -1039,3 +1039,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-05-04,Monday,6,7,2,0,0,2,0.0
 2026-05-04,Monday,7,8,0,0,0,0,0
 2026-05-04,Monday,8,9,2,1,0,1,0.4444
+2026-05-04,Monday,9,10,6,1,1,4,0.0168
