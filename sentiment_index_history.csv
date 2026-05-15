@@ -1310,3 +1310,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-05-15,Friday,14,15,7,2,0,5,0.269
 2026-05-15,Friday,15,16,9,1,2,6,-0.1428
 2026-05-15,Friday,16,17,9,1,1,7,0.0233
+2026-05-15,Friday,17,18,11,0,1,10,-0.0684
