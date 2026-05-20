@@ -1425,3 +1425,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-05-20,Wednesday,9,10,7,0,2,5,-0.213
 2026-05-20,Wednesday,10,11,5,0,0,5,0.0
 2026-05-20,Wednesday,11,12,5,0,0,5,0.0
+2026-05-20,Wednesday,12,13,4,0,3,1,-0.5841
