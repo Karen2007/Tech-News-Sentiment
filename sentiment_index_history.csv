@@ -1612,3 +1612,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-05-28,Thursday,8,9,5,1,0,4,0.1729
 2026-05-28,Thursday,9,10,5,1,0,4,0.1033
 2026-05-28,Thursday,10,11,7,0,0,7,0.0
+2026-05-28,Thursday,11,12,9,1,2,6,-0.0957
