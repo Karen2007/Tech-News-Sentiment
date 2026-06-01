@@ -1710,3 +1710,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-06-01,Monday,10,11,9,2,1,6,0.0213
 2026-06-01,Monday,11,12,9,1,1,7,-0.0226
 2026-06-01,Monday,12,13,5,1,0,4,0.1084
+2026-06-01,Monday,13,14,11,3,3,5,-0.0382
