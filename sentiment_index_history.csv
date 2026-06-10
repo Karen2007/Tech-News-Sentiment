@@ -1920,3 +1920,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-06-10,Wednesday,5,6,1,0,0,1,0.0
 2026-06-10,Wednesday,6,7,3,0,1,2,-0.3051
 2026-06-10,Wednesday,7,8,2,0,0,2,0.0
+2026-06-10,Wednesday,8,9,6,1,2,3,-0.0696
