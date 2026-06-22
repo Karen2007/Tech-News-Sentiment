@@ -2202,3 +2202,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-06-22,Monday,23,0,1,0,0,1,0.0
 2026-06-22,Monday,0,1,4,1,1,2,-0.015
 2026-06-22,Monday,1,2,0,0,0,0,0
+2026-06-22,Monday,2,3,2,0,0,2,0.0
