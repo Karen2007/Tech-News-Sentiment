@@ -2700,3 +2700,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-07-12,Sunday,18,19,5,0,1,4,-0.1608
 2026-07-12,Sunday,19,20,2,1,0,1,0.4169
 2026-07-12,Sunday,20,21,7,1,1,5,0.0423
+2026-07-12,Sunday,21,22,6,1,1,4,0.015
