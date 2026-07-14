@@ -2736,3 +2736,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-07-14,Tuesday,6,7,0,0,0,0,0
 2026-07-14,Tuesday,7,8,0,0,0,0,0
 2026-07-14,Tuesday,8,9,4,0,0,4,0.0
+2026-07-14,Tuesday,9,10,4,1,1,2,-0.0692
