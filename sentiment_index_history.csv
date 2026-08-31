@@ -3880,3 +3880,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-08-31,Monday,13,14,5,1,0,4,0.0904
 2026-08-31,Monday,14,15,8,1,1,6,0.0178
 2026-08-31,Monday,15,16,8,1,2,5,-0.0902
+2026-08-31,Monday,16,17,10,0,3,7,-0.2283
