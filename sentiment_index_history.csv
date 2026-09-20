@@ -4355,3 +4355,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-09-20,Sunday,8,9,1,0,0,1,0.0
 2026-09-20,Sunday,9,10,1,0,0,1,0.0
 2026-09-20,Sunday,10,11,0,0,0,0,0
+2026-09-20,Sunday,11,12,4,0,2,2,-0.3649
