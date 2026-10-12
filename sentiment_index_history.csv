@@ -4886,3 +4886,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-10-12,Monday,13,14,6,1,1,4,-0.0424
 2026-10-12,Monday,14,15,7,1,1,5,-0.0002
 2026-10-12,Monday,15,16,10,1,2,7,-0.0424
+2026-10-12,Monday,16,17,10,0,3,7,-0.25
