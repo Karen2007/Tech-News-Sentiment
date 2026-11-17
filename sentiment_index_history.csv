@@ -5728,3 +5728,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-11-16,Monday,20,21,10,0,1,9,-0.091
 2026-11-16,Monday,21,22,6,1,0,5,0.0996
 2026-11-16,Monday,22,23,6,0,4,2,-0.6142
+2026-11-17,Tuesday,23,0,6,0,1,5,-0.1147
