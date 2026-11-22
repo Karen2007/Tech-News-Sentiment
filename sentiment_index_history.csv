@@ -5851,3 +5851,4 @@ date,weekday,hour_start,hour_end,headline_count,positive_count,negative_count,ne
 2026-11-22,Sunday,23,0,6,0,0,6,0.0
 2026-11-22,Sunday,0,1,5,0,1,4,-0.1162
 2026-11-22,Sunday,1,2,1,0,0,1,0.0
+2026-11-22,Sunday,2,3,2,1,1,0,0.061
